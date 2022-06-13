@@ -1,0 +1,135 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: none;
+  box-sizing: border-box;
+}
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+body {
+  font-family: 'Inter', sans-serif;
+}
+.pattern-curve {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 70%;
+}
+main {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+}
+.section-center {
+  display: grid;
+  place-items: center;
+  margin-top: 1rem;
+}
+.img-container {
+  position: relative;
+  background-repeat: no-repeat;
+}
+.img-container::after {
+  content: '';
+  background-image:url(./images/pattern-bg.svg);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  bottom: 30px;
+  left:50px;
+  z-index: -1;
+}
+.person-img {
+  z-index: 1;
+  width: 250px;
+  border-radius: 10px;
+  object-fit: cover;
+  box-shadow: 5px 10px 25px hsl(240, 18%, 77%);
+}
+
+.btn-container {
+  background-color: white;
+  border-radius: 25px;
+  padding: 5px;
+  color:  hsl(240, 18%, 77%);
+  position: relative;
+  top: -20px;
+  left: 90px;
+}
+.next-btn, .prev-btn {
+  margin: 0 0.7rem;
+  font-size: 1.3rem;
+  cursor: pointer;
+}
+.info {
+  padding: 3rem 0;
+  text-align: center;
+  max-width: 400px;
+  position: relative;
+  margin-inline: 2rem;
+}
+.info::before {
+  content: '';
+  background-image: url(./images/pattern-quotes.svg);
+  background-repeat: no-repeat;
+  position: absolute;
+  width: 200px;
+  height: 100%;
+  top: 30px;
+  left: 100px;
+}
+#text {
+  color:hsl(228, 45%, 44%);
+  font-size: 1.2rem;
+  padding: 1rem 0;
+}
+#name {
+  color:hsl(228, 45%, 44%);
+}
+#position {
+  color: hsl(240, 18%, 77%);
+  padding-top: 0.5rem;
+}
+.slide {
+  transition: all 0.4s ease-in-out;
+}
+
+@media screen and (min-width: 600px){
+  .section-center {
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+  }
+  .person-img {
+    width: 400px;
+  }
+  .info {
+    text-align: left;
+    max-width: 600px;
+    margin-right: -3rem
+  }
+  .name-role-flex{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.2rem;
+    padding-top: 1rem;
+  }
+  #position{
+    padding: 0;
+  }
+  #text {
+    font-size: 2rem;
+    font-weight: 300;
+  }
+  .btn-container {
+    left: 30px;
+  }
+}
